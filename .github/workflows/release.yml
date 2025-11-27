@@ -14,7 +14,7 @@ jobs:
       new_tag: ${{ steps.bump.outputs.new_tag }}
       major: ${{ steps.bump.outputs.major }}
       minor: ${{ steps.bump.outputs.minor }}
-      patch: ${{ steps.bump.outputs.patch }}
+      patch: ${{ steps.bump_version.outputs.patch }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -80,21 +80,33 @@ jobs:
           PROJECT_VERSION_PATCH: ${{ needs.bump_version.outputs.patch }}
         run: |
           cmake -G "Ninja" -S . -B build \
-            -DCMAKE_INSTALL_PREFIX=${{ github.workspace }}/build/package
+            -DCMAKE_INSTALL_PREFIX=${{ github.workspace }}/build/package \
+            -DCPACK_PACKAGE_CONTACT="github-actions@example.com" \
+            -DCPACK_DEBIAN_PACKAGE_MAINTAINER="GitHub Actions <github-actions@example.com>"
           cmake --build build --parallel 2
+
+      - name: Create package directory
+        shell: bash
+        run: |
+          mkdir -p ${{ github.workspace }}/build/package
+
+      - name: Install to package directory
+        shell: bash
+        run: |
+          cmake --install build --prefix ${{ github.workspace }}/build/package
 
       - name: Package
         shell: bash
         run: |
-          cmake --install build --prefix package
+          cd build
           if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
-            cpack -G ZIP --config build/CPackConfig.cmake
+            cpack -G ZIP
           else
-            cpack -G DEB --config build/CPackConfig.cmake
+            cpack -G DEB
           fi
 
       - name: Upload
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ needs.bump_version.outputs.new_tag }}
-          files: build/package/*
+          files: build/*.deb build/*.zip

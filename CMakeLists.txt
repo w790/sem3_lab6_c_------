@@ -27,3 +27,12 @@ target_include_directories(main PRIVATE .)
 
 # Добавляем CPack для создания пакетов (добавлено)
 include(CPack)
+
+# Добавьте это после include(CPack)
+set(CPACK_PACKAGE_VENDOR "GitHub Actions")
+set(CPACK_PACKAGE_CONTACT "github-actions@example.com")
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "GitHub Actions <github-actions@example.com>")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Vector Graphics Editor")
+set(CPACK_PACKAGE_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
+set(CPACK_PACKAGE_VERSION_MINOR ${PROJECT_VERSION_MINOR})
+set(CPACK_PACKAGE_VERSION_PATCH ${PROJECT_VERSION_PATCH})
