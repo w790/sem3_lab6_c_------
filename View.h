@@ -5,6 +5,7 @@
 #pragma once
 #include <memory>
 #include "primitive.h"
+#include <vector>
 
 class Controller;
 

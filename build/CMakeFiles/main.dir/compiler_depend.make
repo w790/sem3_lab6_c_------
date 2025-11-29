@@ -1615,6 +1615,7 @@ CMakeFiles/main.dir/View.cpp.o: /Users/pasha/CLionProjects/sem3_lab6_c--/graficv
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h \
   /Users/pasha/CLionProjects/sem3_lab6_c--/graficvectoreditor/View.h \
+  /Users/pasha/CLionProjects/sem3_lab6_c--/graficvectoreditor/controller.h \
   /Users/pasha/CLionProjects/sem3_lab6_c--/graficvectoreditor/modeldocument.h \
   /Users/pasha/CLionProjects/sem3_lab6_c--/graficvectoreditor/primitive.h
 
@@ -4835,9 +4836,9 @@ CMakeFiles/main.dir/primitive.cpp.o: /Users/pasha/CLionProjects/sem3_lab6_c--/gr
 
 /Users/pasha/CLionProjects/sem3_lab6_c--/graficvectoreditor/modeldocument.cpp:
 
-/Users/pasha/CLionProjects/sem3_lab6_c--/graficvectoreditor/controller.h:
-
 /Users/pasha/CLionProjects/sem3_lab6_c--/graficvectoreditor/controller.cpp:
+
+/Users/pasha/CLionProjects/sem3_lab6_c--/graficvectoreditor/controller.h:
 
 /Users/pasha/CLionProjects/sem3_lab6_c--/graficvectoreditor/View.h:
 
