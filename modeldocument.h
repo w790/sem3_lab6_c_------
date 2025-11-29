@@ -15,5 +15,5 @@ public:
     void addPrimitiveRectangle(double x,double y,double width,double height);
     void addPrimitiveLine(double x1, double y1, double x2,double y2);
 
-    const std::vector<std::shared_ptr<Primitive>>& getPrimitives();
+    std::vector<std::shared_ptr<Primitive>>& getPrimitives();
 };

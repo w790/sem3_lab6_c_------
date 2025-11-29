@@ -1,7 +1,7 @@
 //
 // Created by pasha on 26.11.2025.
 //
-#pragma once
+
 #include "modeldocument.h"
 
 
@@ -17,6 +17,6 @@ void Document::addPrimitiveLine(double x1, double y1, double x2,double y2) {
 }
 
 
-const std::vector<std::shared_ptr<Primitive>>& Document::getPrimitives() {
+std::vector<std::shared_ptr<Primitive>>& Document::getPrimitives() {
     return primitives;
 }//тут надо вернуть объекты primitives

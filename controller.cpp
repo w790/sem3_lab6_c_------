@@ -8,13 +8,12 @@
 // 4) создание графического примитива;
 // 5) удаление графического примитива.
 
-#pragma once
 #include "controller.h"
 
 
 Controller::Controller() {
     model = std::make_unique<Document>();
-    view = std::make_unique<View>(this, model.get());
+    view = std::make_unique<View>(this);
 }
 
 Controller::~Controller() = default;
@@ -27,14 +26,14 @@ void Controller::createCircle(double x, double y, double r) {
     //{model.addPrimitive(double x, double y, double r)
     //view.render()  а в рендер этой функции у меня будет вызываться  getPrimitives и после этого у примитива будет вызываться draw()
     model->addPrimitiveCircle(x, y, r);
-    view->render();
+    view->render(model->getPrimitives());
 }
 
 void Controller::createRectangle(double x , double y, double width, double height) {
     model->addPrimitiveRectangle(x, y , width, height);
-    view->render();
+    view->render(model->getPrimitives());
 }
 void Controller::createLine(double x1, double y1, double x2, double y2) {
     model->addPrimitiveLine(x1, y1, x2, y2);
-    view->render();
+    view->render(model->getPrimitives());
 }

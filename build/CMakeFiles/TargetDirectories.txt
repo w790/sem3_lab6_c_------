@@ -1,3 +1,5 @@
 /Users/pasha/CLionProjects/sem3_lab6_c--/graficvectoreditor/build/CMakeFiles/main.dir
+/Users/pasha/CLionProjects/sem3_lab6_c--/graficvectoreditor/build/CMakeFiles/package.dir
+/Users/pasha/CLionProjects/sem3_lab6_c--/graficvectoreditor/build/CMakeFiles/package_source.dir
 /Users/pasha/CLionProjects/sem3_lab6_c--/graficvectoreditor/build/CMakeFiles/edit_cache.dir
 /Users/pasha/CLionProjects/sem3_lab6_c--/graficvectoreditor/build/CMakeFiles/rebuild_cache.dir

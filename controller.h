@@ -5,6 +5,7 @@
 #pragma once
 #include "modeldocument.h"
 #include "View.h"
+#include <memory>
 
 //Пользователь нажимает кнопку "Добавить круг"
 //Controller получает событие (в реальном GUI) или вызывается напрямую (в нашем макете)
@@ -27,5 +28,4 @@ public:
     void createCircle(double x, double y, double r);
     void createRectangle(double x , double y, double width, double height);
     void createLine(double x1,double y1,double x2 ,double y2 );
-
 };

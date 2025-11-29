@@ -3,11 +3,11 @@
 //
 
 #include "View.h"
+#include "controller.h"
 
-View::View(Controller* contr, Document* doc): controller(contr), model(doc) {}
+View::View(Controller* contr): controller(contr) {}
 
-void View::render() {
-    const auto& primitives = model->getPrimitives();
+void View::render(const std::vector<std::shared_ptr<Primitive>> & primitives) {
     for (const auto& primitive : primitives) {
         primitive->draw(); // Вызываем отрисовку каждого примитива
     }

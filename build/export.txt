@@ -1,3 +1,0 @@
-Circle 20 30 6
-Rectangle 10 20 30 40
-Line 10 15 20 25
